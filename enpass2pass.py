@@ -92,15 +92,13 @@ class enpass2pass:
                     if value == "":
                         email = card['fields'][1]['value']
                         path = name + "/" + email
-                        data = "Email:    " + email
                     else:
                         username = card['fields'][0]['value']
                         path = name + "/" + username
-                        data = "Username: " + username
 
                 if templatetype == "login.default":
-                    data = data + "\n" + "Password: " + pwd + '\n'
                     path = "Login/" + path
+                    data = pwd + "\n"
                     self.passImportEntry(path, data)
 
 
