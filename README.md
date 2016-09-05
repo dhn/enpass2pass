@@ -3,7 +3,7 @@ Import Enpass walletx.db to pass
 
 ## Usage
 
-Enpass use AES-256 to encrypt the data and stored it into a sqlciphter database (walletx.db).
+Enpass use AES-256 to encrypt the data and stored it into a sqlcipher database (walletx.db).
 
   ```
   $ enpass2pass.py ~/walletx.db "YOURENPASSPASSWORD"
