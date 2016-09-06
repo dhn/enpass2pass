@@ -11,4 +11,6 @@ Enpass use AES-256 to encrypt the data and stored it into a sqlcipher database (
 
 ## Notes
   * worked only with Python 2
-  * imported only entries with ``"templatetype": "login.default"`` tag
+  * imported only entries with ``templatetype``:
+    * ``login.default``
+    * ``computer.wifi``
