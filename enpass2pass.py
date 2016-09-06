@@ -84,20 +84,28 @@ class enpass2pass:
             if card["fields"] != []:
                 templatetype = card['templatetype']
                 type_ = card["fields"][0]['type']
-                pwd = card['fields'][2]['value']
-                name = card['name']
-
-                if type_ == "username":
-                    value = card['fields'][0]['value']
-                    if value == "":
-                        email = card['fields'][1]['value']
-                        path = name + "/" + email
-                    else:
-                        username = card['fields'][0]['value']
-                        path = name + "/" + username
 
                 if templatetype == "login.default":
+                    pwd = card['fields'][2]['value']
+                    name = card['name']
+
+                    if type_ == "username":
+                        value = card['fields'][0]['value']
+                        if value == "":
+                            email = card['fields'][1]['value']
+                            path = name + "/" + email
+                        else:
+                            username = card['fields'][0]['value']
+                            path = name + "/" + username
+
                     path = "Login/" + path
+                    data = pwd + "\n"
+                    self.passImportEntry(path, data)
+                elif templatetype == "computer.wifi":
+                    name = card['fields'][0]['value']
+                    pwd = card['fields'][1]['value']
+
+                    path = "Wifi/" + name
                     data = pwd + "\n"
                     self.passImportEntry(path, data)
 
